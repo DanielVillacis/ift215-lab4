@@ -37,5 +37,31 @@
             "nom": "Prunier",
             "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
         }
+    },
+    {
+        "id": 3,
+        "serial": "sdfds",
+        "nom": "carrote",
+        "description": "une legume orange",
+        "prix": 1.89,
+        "qte_inventaire": 100,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 3,
+        "serial": "sdfds",
+        "nom": "orange",
+        "description": "un fruit de couleur orange",
+        "prix": 0.79,
+        "qte_inventaire": 40,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
     }
 ]
