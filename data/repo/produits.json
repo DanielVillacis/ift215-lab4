@@ -52,7 +52,46 @@
         }
     },
     {
-        "id": 3,
+        "id": 4,
+        "serial": "sdfds",
+        "nom": "orange",
+        "description": "un fruit de couleur orange",
+        "prix": 0.79,
+        "qte_inventaire": 40,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 5,
+        "serial": "sdfds",
+        "nom": "orange",
+        "description": "un fruit de couleur orange",
+        "prix": 0.79,
+        "qte_inventaire": 40,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 6,
+        "serial": "sdfds",
+        "nom": "orange",
+        "description": "un fruit de couleur orange",
+        "prix": 0.79,
+        "qte_inventaire": 40,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 7,
         "serial": "sdfds",
         "nom": "orange",
         "description": "un fruit de couleur orange",
