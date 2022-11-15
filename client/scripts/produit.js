@@ -18,7 +18,7 @@ function item_to_html(item) {
         .append('<li>Qte dispo :' + item.qte_inventaire + '</li>')
         .append('<li>Categorie. : ' + item.categorie.nom + '</li>')
         .append('</br>')
-        .append('<small class="small">' + item.description + '</smalll><p class = "w-100 display-6 text-center"><i class="bi bi-cart-plus"></i></p>');
+        .append('<small class="small">' + item.description + '</smalll> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item([id_item])"><i class="bi bi-cart-plus"></i></button></p>');
     item_body = $('<div></div>').addClass('card-body').append('<h1 class="card-title text-center"> $' + item.prix +  '</h1>').append(item_detail);
     item_card.append(item_head).append(item_body);
     return $('<div></div>').addClass('col-md-3').append(item_card);
