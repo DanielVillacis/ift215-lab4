@@ -18,10 +18,22 @@ function item_to_html(item) {
         .append('<li>Qte dispo :' + item.qte_inventaire + '</li>')
         .append('<li>Categorie. : ' + item.categorie.nom + '</li>')
         .append('</br>')
-        .append('<small class="small">' + item.description + '</smalll> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item([id_item])"><i class="bi bi-cart-plus"></i></button></p>');
+        .append('<small class="small">' + item.description + '</smalll> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item('+item.id+')"><i class="bi bi-cart-plus"></i></button></p>');
     item_body = $('<div></div>').addClass('card-body').append('<h1 class="card-title text-center"> $' + item.prix +  '</h1>').append(item_detail);
     item_card.append(item_head).append(item_body);
     return $('<div></div>').addClass('col-md-3').append(item_card);
+}
+
+function add_item(id_item){
+    $.ajax({
+        url: "/clients/"+1+"/panier",
+        method:"POST",
+        data: {"idProduit": id_item, "quantite": 1},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        success: function( result ) {
+            $('#item_counter').text(result.items.length);
+        }
+    });
 }
 
 $(function () {
