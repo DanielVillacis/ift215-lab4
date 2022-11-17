@@ -46,6 +46,8 @@ function chargerpanier() {
                 item = itemPanier_to_html(value);
                 $('#list_items').append(item);
             });
+            grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur +' </strong></td>')
+            $('#grand_total').append(grand_total);
         }
     });
 }
@@ -58,6 +60,7 @@ function itemPanier_to_html(item) {
         .append('<td>' + item.prix + '</td>')
         .append('<td>' + item.quantite + '</td>')
         .append('<td>'+ prixTotal + '</td>');
+
     return $(item_panier);
 }
 
