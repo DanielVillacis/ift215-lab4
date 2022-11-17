@@ -36,5 +36,30 @@ function add_item(id_item){
     });
 }
 
+function chargerpanier() {
+    $.ajax({
+        url: "/clients/"+1+"/panier",
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        success: function( result ) {
+            console.log(result);console.log(result.items);
+            $.each(result.items, function (key, value) {
+                item = itemPanier_to_html(value);
+                $('#list_items').append(item);
+            });
+        }
+    });
+}
+
+function itemPanier_to_html(item) {
+    let pTotal = item.prix * item.quantite;
+    let prixTotal = pTotal.toFixed(2);
+    item_panier = $('<tr></tr>')
+        .append('<td>' + item.nomProduit + '</td>')
+        .append('<td>' + item.prix + '</td>')
+        .append('<td>' + item.quantite + '</td>')
+        .append('<td>'+ prixTotal + '</td>');
+    return $(item_panier);
+}
+
 $(function () {
 });
