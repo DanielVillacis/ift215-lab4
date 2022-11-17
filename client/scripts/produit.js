@@ -49,7 +49,6 @@ function chargerpanier() {
         }
     });
 }
-//test
 
 function itemPanier_to_html(item) {
     let pTotal = item.prix * item.quantite;
